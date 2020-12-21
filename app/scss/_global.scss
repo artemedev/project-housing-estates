@@ -1,0 +1,50 @@
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    font-size: inherit;
+}
+p{
+    margin: 0;
+}
+body{
+    min-width: 320px;
+    color: #fff;
+    overflow-x: visible;
+    
+}
+.container{
+    max-width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.page-section{ /*позиционирование внутри этого блока*/
+    background-color: #202020;
+    top: 0;
+    
+}
+.section-line {
+    
+  }
+.scroll__btn{
+    padding: 0 0 47px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
