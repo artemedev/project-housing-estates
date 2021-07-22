@@ -1,0 +1,76 @@
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+  }
+  .top{
+    &__info{
+
+    }
+ 
+    &__insta{
+      height: 40px;
+    }
+    &__facebook{
+      height: 40px;
+    }
+    &__title{
+      margin-top: 50px;
+    }
+  }
+  .about {
+    &__body{
+      margin-top: 20px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items:center;
+        
+    }
+    &__img{
+      
+    }
+    &__text {
+      margin-top: 10px;
+    }
+  }
+  .porfolio{
+    &__grid-item {
+      display: none;
+    }
+  }
+  .services{
+    &__body {
+      padding-top: 10px;
+    }
+    &__item-jobs {
+      margin: 0;
+    }
+    &__item-job {
+      margin: 0;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .scroll__btn img{
+    width: 15%;
+  }
+  .top{
+    &__image{
+      width: 50%;
+    }
+    &__title{
+      margin-top: 10px;
+    }
+  }
+  .about{
+    &__img{
+      width: 30%;
+    }
+  }
+
+    
+  
+}

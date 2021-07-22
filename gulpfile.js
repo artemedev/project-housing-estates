@@ -6,12 +6,16 @@ let gulp = require('gulp'),
     rename = require('gulp-rename'),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer');
+    var ghPages = require('gulp-gh-pages');
 
 
 gulp.task('clean', async function(){
   del.sync('dist')
 })
-
+gulp.task('deploy', function() {
+  return gulp.src('./app/**/*')
+    .pipe(ghPages());
+});
 gulp.task('scss', function(){
   return gulp.src('app/scss/**/*.scss')
     .pipe(sass({outputStyle: 'compressed'}))

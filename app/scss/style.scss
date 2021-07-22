@@ -9,32 +9,60 @@
   z-index: 10;
   color: #fff;
   width: 100%;
-
+  
   &__inner {
     position: relative;
   }
 }
 .menu {
+  
   position: absolute;
   top: 40vh;
   right: 0;
+  margin:0 auto;
+  padding:0;
+  list-style-type: none;
   &__list {
+   
+    width: 170px;
   }
+
   &__list-item {
-    font-family: "Futura PT", sans-serif;
+    
+    @extend %futura-light;
     font-size: 24px;
     line-height: 31px;
     /* identical to box height */
     & + .menu__list-item {
     }
-    &.active a {
-      text-decoration: underline;
+    &.active{
+     
     }
+    &.active a {
+     
+    
+      @extend %futura-medium;
+    }
+    &.active a::before {
+      content: "";
+      position: absolute;
+      border: 2px solid #FFFFFF;
+      transform: rotate(180deg);
+      width: 44px;
+      left: -65px;
+      top: 50%;
+      transform: translate(-50%, 0)
+    }
+  }
+  &__list-link{
+    position: relative;
+    display: inline-block;
+    width: 100%;
   }
 }
 .top {
   &__inner {
-    /*height: 100vh;*/
+    height: 100vh;
   }
   background-image: url(../images/bg_image.jpg);
   background-repeat: no-repeat;
@@ -49,25 +77,30 @@
     color: #fff;
     border: none;
     background-color: inherit;
-    font-family: "Futura PTLight", sans-serif;
-    font-weight: 300;
+    font-size: calc(24px + (24 - 20) * ((100vw - 320px) / (1440 - 320)));
+    @extend %futura-light;
   }
   &__info {
     display: flex;
-    justify-content: center;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding-top: 70px;
   }
   &__image {
+    
+  } 
+  &__title{
+    margin-top: 100px;
   }
-  &__title {
-    padding-top: 90px;
-    font-size: 48px;
-    line-height: 62px;
+  &__title-text {
+    
+    font-size: calc(30px + (48 - 20) * ((100vw - 320px) / (1440 - 320)));
+    line-height: 100%;
     color: #fff;
-    font-family: "Futura PT", sans-serif;
+    @extend %futura-medium;
+    font-weight: 500;
   }
 }
 .about {
@@ -80,20 +113,28 @@
     padding: 20px;
     background: #121212;
    
-    top: 0;
-    left: 0;
+   
     width: 100%;
   }
   &__body {
+    margin-top: 160px;
+    height: 100%;
+    width: 100%;
+    
+  }
+  &__img{
+    
   }
   &__text {
+    margin-top: 50px;
     max-width: 485px;
     font-family: "Futura PT", sans-serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: calc(22px + (24 - 20) * ((100vw - 320px) / (1140 - 320)));
     line-height: 31px;
     display: flex;
-    align-items: center;
+    
+    
   }
 }
 .porfolio {
@@ -107,6 +148,7 @@
     width: 100%;
   }
   &__gallery {
+    
   }
   &__grid {
     position: relative;
@@ -114,13 +156,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 0;
-    grid-auto-flow: dense;
-    max-height: 728px;
-    width: 100vw;
+    
+    
+    
   }
   &__grid-item {
     max-height: 367px;
+   
     background-color: rgb(255, 184, 184);
+    background-repeat: no-repeat;
+    background-size: cover;
     &:nth-of-type(1) {
       background-image: url(../images/portfolio-img1.jpg);
     }
@@ -339,16 +384,92 @@
     left: 0;
     width: 100%;
   }
+  &__body{
+    align-items:center;
+  }
+  &__slider{
+    max-width: 100%;
+    padding: 50px 100px;
+  }
+
+  &__slider-item{
+    max-width: 260px;
+    padding: 36px 0;
+  }
+
+  &__slider-img{
+    height: auto;
+    width: 100%;
+    max-width: 257px;
+
+  }
+  &__slider-title{
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    padding: 10px;
+  }
+  &__slider-text{
+    padding: 10px;
+
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+  }
+  &__slider-btn{
+    border: none;
+    background: #131313;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 31px;
+  }
   &__footer{
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    min-height: ;
     background: #131313;
+    padding-top: 30px;
+  }
+  &__footer-info{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    line-height: 31px;
   }
   &__footer-copy{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
   }
+}
+.slick-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.slick-btn__left {
+  left: -30px;
+  z-index: 10;
+}
+
+.slick-btn__right {
+  right: 0;
+  z-index: 10;
+
 }
 @import "media";
 /*position: relative;
